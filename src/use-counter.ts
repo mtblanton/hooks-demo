@@ -9,7 +9,8 @@ const useCounter = () => {
         document.title = `Current counter is ${count}`;
     }, [count]);
 
-    return { count, incrementCounter, decrementCounter };
+    const returnTuple: [number, () => void, () => void] = [count, incrementCounter, decrementCounter]
+    return returnTuple;
 };
 
 export default useCounter;
